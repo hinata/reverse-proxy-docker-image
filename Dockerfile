@@ -9,8 +9,8 @@ ENV DNS2_PORT 53
 ENV UPSTREAM_HOST 127.0.0.1
 ENV UPSTREAM_PORT 80
 
-RUN apt update  && \
-    apt install    \
+RUN apt update     && \
+    apt -y install    \
       gettext-base
 
 COPY entrypoint.sh /docker-entrypoint.sh

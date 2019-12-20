@@ -18,6 +18,6 @@ resolvers dns
   nameserver dns2 ${DNS2_HOST}:${DNS2_PORT}
   hold valid 60s
 
-listen proxy
+listen upstream-server
   bind *:${UPSTREAM_PORT}
   server upstream ${UPSTREAM_HOST}:${UPSTREAM_PORT} check resolvers dns
