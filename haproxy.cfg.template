@@ -1,0 +1,23 @@
+#@# vim: set filetype=haproxy:
+global
+  daemon
+  log 127.0.0.1 local2 err
+  maxconn 4096
+
+defaults
+  log global
+  mode tcp
+  option dontlognull
+  timeout connect 30s
+  timeout client 30s
+  timeout server 30s
+  timeout queue 1m
+
+resolvers dns
+  nameserver dns1 ${DNS1_HOST}:${DNS1_PORT}
+  nameserver dns2 ${DNS2_HOST}:${DNS2_PORT}
+  hold valid 60s
+
+listen proxy
+  bind *:${UPSTREAM_PORT}
+  server upstream ${UPSTREAM_HOST}:${UPSTREAM_PORT} check resolvers dns
