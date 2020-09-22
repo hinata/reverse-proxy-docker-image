@@ -1,10 +1,10 @@
 #@# vim: set filetype=dockerfile:
-FROM haproxy:2.1.1
+FROM haproxy:2.2.3
 MAINTAINER Takahiro INOUE <takahiro.inoue@mail.3dcg-arts.net>
 
 ENV DNS1_HOST 127.0.0.11
 ENV DNS1_PORT 53
-ENV DNS2_HOST 172.17.0.1
+ENV DNS2_HOST 127.0.0.11
 ENV DNS2_PORT 53
 ENV UPSTREAM_HOST 127.0.0.1
 ENV UPSTREAM_PORT 80
