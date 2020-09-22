@@ -14,8 +14,7 @@ defaults
   timeout queue 1m
 
 resolvers dns
-  nameserver dns1 ${DNS1_HOST}:${DNS1_PORT}
-  nameserver dns2 ${DNS2_HOST}:${DNS2_PORT}
+  nameserver dns1 ${DNS_HOST}:${DNS_PORT}
   hold valid 60s
 
 listen upstream-server
